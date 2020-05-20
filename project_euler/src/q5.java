@@ -2,29 +2,58 @@
 //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 public  class q5{
-public static void main(String []args){
-long c = 21;
-while (1==1)
-{
-    boolean all = true;
-    for (int i = 1; i < 21; i++)
-    {
-        all = true;
-        if ( c % i != 0 )
-        {
-            all = false;
-            break;
-        }
-    }
-    if ( all )
-    {
-        System.out.println( c );
-        System.exit(0);
-    }
+	public static void main(String[] args) 
+	{ 
+		int[] a = { 2520,11,12,13,14,15,16,17,18,19,20 }; 
+		System.out.println(lcm(a)); 
+	} 
 
-    c++;
-}
-}
+public static long lcm(int[] a) 
+{ 
+	int div = 2; 
+	long lcm = 1; 
+	while (true) 
+	{ 
+    int c = 0; 
+		boolean divisible = false; 
+		for (int i = 0; i < a.length; i++)
+		{ 
+        if (a[i] == 0) 
+			{ 
+				return 0; 
+			} 
+			else if (a[i] < 0) 
+			{ 
+				a[i] = a[i] * (-1); 
+			} 
+			if (a[i] == 1) 
+			{ 
+				c++; 
+			} 
+            if (a[i] % div == 0) 
+			{ 
+				divisible = true; 
+				a[i] = a[i] / div; 
+			} 
+		} 
+
+		
+		if (divisible==true) 
+		{ 
+			lcm = lcm * div; 
+		} 
+		else 
+		{ 
+			div++; 
+		} 
+
+
+		if (c == a.length) 
+		{ 
+			return lcm; 
+		} 
+	} 
+} 
 }
 
-                      //output :232792560
+   // Output: 232792560

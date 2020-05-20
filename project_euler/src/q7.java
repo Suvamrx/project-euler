@@ -2,32 +2,37 @@
 //What is the 10 001st prime number?
 
 public class q7{
-public static boolean prime(long n){
-int count =0;
-long sqrt=(long)Math.sqrt(n);
-for (long i = 1; i <= sqrt; i++) {
-			if (n % i ==0) 
-				count++;
-				if (count > 1)
-					return false;
+	
+		private static boolean isPrime(long n)
+		{
+			
+			if ((n % 2 == 0)&&(n != 2))
+				return false;		
+			for (long i = 3; i <= (Math.sqrt(n)+1); i += 2)	
+			{
+				if (n % i == 0)
+					return false;	
 			}
-		return true;
-}
- public static long prime1(long r){
-  long count=1;
-  long result=0;
-for(long i=2;count<=r;i++){
-   if(prime(i)){
-   result=i;
-   count++;
-  }
-}
- return result;
- }
+			return true;
+		}
 
-public static void main(String[]args){
-System.out.println(prime1( 10001));
-}
-}
-
-//output :104743
+		public static void main(String[] args)
+		{
+			
+			int NumPrimes = 1;
+			long i = 2;
+			while(NumPrimes <= 10001)
+			{
+				if (isPrime(i))
+				{
+					i++;
+					NumPrimes++;
+				}
+				else i++;
+			}
+			
+			System.out.println(i-1);
+			
+		}	
+	}
+	       //output :104743

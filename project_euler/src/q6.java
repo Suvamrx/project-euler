@@ -5,17 +5,20 @@
 *Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025-385=2640.
 *Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 */
-
+ //#updated
 public class q6{
-public static void main(String[]args){
-int sum = 0;
-		int sum2 = 0;
-		for (int i = 1; i <= 100; i++) {
-			sum += i;
-			sum2 += i * i;
-                    }
-     System.out.println((sum*sum)-sum2);
+  static int sosq(int n){
+       if (n==0){
+           return 0;
+        }
+    else
+       return(n*n)+sosq(n-1);
+   }
+ static int sosu(int n){
+     return (n*(n+1)/2)*(n*(n+1)/2);
+  }
+public static void main(String []args){
+     System.out.println(sosu(100)-sosq(100));
+  }
 }
-}
-
-  //output :25164150
+  //Output: 25164150
