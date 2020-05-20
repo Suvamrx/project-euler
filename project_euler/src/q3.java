@@ -3,15 +3,24 @@
 
 public class q3{
 public static void main(String[]args){
-long out = 0;
-        long m = 600851475143L;
-        for (long n = 3; n < m; n += 2) {
-            while (m % n == 0) {
-                out = n;
-                m = m / n;
-            }
+	long x = 600851475143L; 
+
+    for (long z = 2; z<= x; z++) {
+
+        if (x%z == 0) {
+                    
+            System.out.println(z);
+              x/=z;
+              z-=1;
         }
-        System.out.println("" + ((m == 1)?out:m));
+
     }
+
 }
-    //output :6857
+
+}
+/*Output: 71
+          839
+          1471
+          6857
+*/
