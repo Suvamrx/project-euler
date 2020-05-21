@@ -5,22 +5,15 @@ public class q3{
 public static void main(String[]args){
 	long x = 600851475143L; 
 
-    for (long z = 2; z<= x; z++) {
-
-        if (x%z == 0) {
-                    
-            System.out.println(z);
-              x/=z;
-              z-=1;
-        }
-
-    }
-
+    long z;
+ for (z = 2; z<x; z++) {
+   
+      if (x%z == 0 ) {
+        x=x/z;
+       }
+   }
+        System.out.println(z);                
 }
 
 }
-/*Output: 71
-          839
-          1471
-          6857
-*/
+//Output: 6857
